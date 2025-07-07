@@ -11,7 +11,7 @@ int fibonacci_iterative(int sequence) {
     int next{};
     int prev1 = 0;
     int prev2 = 1;
-    for (size_t i = 1; i < sequence; ++i) {
+    for (std::size_t i = 1; i < sequence; ++i) {
         next = prev1 + prev2;
         prev1 = prev2;
         prev2 = next;
