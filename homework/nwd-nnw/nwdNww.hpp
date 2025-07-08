@@ -16,7 +16,6 @@ int NWW(int lhs, int rhs) {
     if (lhs == rhs) {
         return std::abs(lhs);
     }
-    
     do {
         if (bigger % lhs == 0 && bigger % rhs == 0) {
             lcm = bigger;
@@ -24,5 +23,5 @@ int NWW(int lhs, int rhs) {
         } else
             ++bigger;
     } while (true);
-        return lcm;
+    return lcm;
 }
