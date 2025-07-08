@@ -8,14 +8,25 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
-    int smaller = std::min(lhs, rhs);
-    int bigger = std::max(lhs, rhs);
-    
-    for (std::size_t i = bigger; i < lhs * rhs; i += bigger){
-        if (i % smaller == 0){
-            return i;
-        }
-        
+    int bigger = std::abs(std::max(lhs, rhs));
+    int lcm {};
+    if (lhs == 0 or rhs == 0) {
+        return 0;
     }
-    return lhs * rhs;
+    if (lhs == rhs) {
+        return std::abs(lhs);
+    }
+    
+    do
+    {
+        if (bigger % lhs == 0 && bigger % rhs == 0)
+        {
+            lcm = bigger;
+            break;
+        }
+        else
+            ++bigger;
+    } while (true);
+    return lcm;
+    
 }
