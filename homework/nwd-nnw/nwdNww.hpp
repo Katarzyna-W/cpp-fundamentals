@@ -1,15 +1,15 @@
 #pragma once
 
 int NWD(int lhs, int rhs) {
-    if (lhs == 0){
+    if (lhs == 0) {
         return rhs;
     }
-    return NWD(rhs % lhs, lhs);
+    return std::abs(NWD(rhs % lhs, lhs));
 }
 
 int NWW(int lhs, int rhs) {
     int bigger = std::abs(std::max(lhs, rhs));
-    int lcm {};
+    int lcm{};
     if (lhs == 0 or rhs == 0) {
         return 0;
     }
@@ -17,16 +17,12 @@ int NWW(int lhs, int rhs) {
         return std::abs(lhs);
     }
     
-    do
-    {
-        if (bigger % lhs == 0 && bigger % rhs == 0)
-        {
+    do {
+        if (bigger % lhs == 0 && bigger % rhs == 0) {
             lcm = bigger;
             break;
-        }
-        else
+        } else
             ++bigger;
     } while (true);
-    return lcm;
-    
+        return lcm;
 }
