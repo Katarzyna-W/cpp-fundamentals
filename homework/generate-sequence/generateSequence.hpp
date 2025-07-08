@@ -2,8 +2,11 @@
 #include <vector>
 
 std::vector<int> generateSequence(int count, int step) {
+    if (step == 0 or count < 1) {
+        return {};
+    }
     std::vector<int> resultVec{};
-    for(size_t i = 0; i < count; ++i) {
+    for (size_t i = 0; i < count; ++i) {
         resultVec.push_back(step * (i + 1));
     }
     return resultVec;
