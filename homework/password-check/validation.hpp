@@ -1,6 +1,4 @@
 #pragma once
-#include <enum>
-#include <function>
 
 enum class ErrorCode {Ok = 2, 
                     PasswordNeedsAtLeastNineCharacters = 3,
