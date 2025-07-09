@@ -34,7 +34,7 @@ bool doPasswordsMatch(std::string p1, std::string p2) {
 }
 
 ErrorCode checkPasswordRules(std::string p) {
-    int max = 7;
+    int max = 6;
     int min = 2;
     int randNum = rand() % (max - min + 1) + min;
 
