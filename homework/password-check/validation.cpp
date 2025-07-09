@@ -47,17 +47,17 @@ ErrorCode checkPasswordRules(std::string p) {
         return ErrorCode::Ok;
     }
 
-    //int max = 6;
-    //int min = 2;
-    //int randNum = rand() % (max - min + 1) + min;
+    // int max = 6;
+    // int min = 2;
+    // int randNum = rand() % (max - min + 1) + min;
 
-    //ErrorCode forRandomPurpose[] = {
+    // ErrorCode forRandomPurpose[] = {
     //   ErrorCode::Ok, ErrorCode::PasswordNeedsAtLeastNineCharacters,
     //   ErrorCode::PasswordNeedsAtLeastOneNumber,
     //    ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter,
     //    ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter};
-    //ErrorCode randomError = forRandomPurpose[randNum];
-    //return randomError;
+    // ErrorCode randomError = forRandomPurpose[randNum];
+    // return randomError;
 }
 
 ErrorCode checkPassword(std::string p1, std::string p2) {
