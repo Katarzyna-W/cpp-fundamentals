@@ -24,6 +24,12 @@ std::string getErrorMessage(ErrorCode code){
 }
 
 bool doPasswordsMatch(std::string p1, std::string p2){
+    if (p1.empty() and p2.empty()) {
+        return true;
+    }
+    if (p1.empty() or p2.empty()) {
+        return false;
+    }
     if (!p1.compare(p2)) {
         return true;
     } 
