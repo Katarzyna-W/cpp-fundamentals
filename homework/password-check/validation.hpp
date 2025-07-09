@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 enum class ErrorCode {Ok = 2, 
                     PasswordNeedsAtLeastNineCharacters = 3,
