@@ -1,29 +1,30 @@
 #include "validation.hpp"
 
-std::string getErrorMessage(ErrorCode code){
-    switch (code){
-        case ErrorCode::Ok: return "Ok";
+std::string getErrorMessage(ErrorCode code) {
+    switch (code) {
+    case ErrorCode::Ok: 
+        return "Ok";
         break;
-        case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
+    case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
         return "Password needs to have at least nine characters";
         break;
-        case ErrorCode::PasswordNeedsAtLeastOneNumber: 
+    case ErrorCode::PasswordNeedsAtLeastOneNumber: 
         return "Password needs to have at least one number";
         break;
-        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter: 
+    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter: 
         return "Password needs to have at least one special character";
         break;
-        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter: 
+    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter: 
         return "Password needs to have at least one uppercase letter";
         break;
-        case ErrorCode::PasswordsDoNotMatch: 
+    case ErrorCode::PasswordsDoNotMatch: 
         return "Passwords do not match";
         break;
     }
     return "-1";
 }
 
-bool doPasswordsMatch(std::string p1, std::string p2){
+bool doPasswordsMatch(std::string p1, std::string p2) {
     if (p1.empty() and p2.empty()) {
         return true;
     }
@@ -32,11 +33,12 @@ bool doPasswordsMatch(std::string p1, std::string p2){
     }
     if (!p1.compare(p2)) {
         return true;
-    } 
+    } else {
     return false;
+    }
 }
 
-ErrorCode checkPasswordRules(std::string p){
+ErrorCode checkPasswordRules(std::string p) {
     int max = 7;
     int min = 2;
     int randNum = rand() % (max - min + 1) + min;
@@ -48,7 +50,7 @@ ErrorCode checkPasswordRules(std::string p){
     return randomError;
 }
 
-ErrorCode checkPassword(std::string p1, std::string p2){
+ErrorCode checkPassword(std::string p1, std::string p2) {
     if (doPasswordsMatch(p1, p2)) {
         return checkPasswordRules(p1);
     } else {
