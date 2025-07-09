@@ -2,18 +2,18 @@
 
 std::string getErrorMessage(ErrorCode code) {
     switch (code) {
-    case ErrorCode::Ok: 
+    case ErrorCode::Ok:
         return "Ok";
         break;
-    case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
+    case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password needs to have at least nine characters";
-    case ErrorCode::PasswordNeedsAtLeastOneNumber: 
+    case ErrorCode::PasswordNeedsAtLeastOneNumber:
         return "Password needs to have at least one number";
-    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter: 
+    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
         return "Password needs to have at least one special character";
-    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter: 
+    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
         return "Password needs to have at least one uppercase letter";
-    case ErrorCode::PasswordsDoNotMatch: 
+    case ErrorCode::PasswordsDoNotMatch:
         return "Passwords do not match";
     }
     return "-1";
@@ -29,7 +29,7 @@ bool doPasswordsMatch(std::string p1, std::string p2) {
     if (!p1.compare(p2)) {
         return true;
     } else {
-    return false;
+        return false;
     }
 }
 
@@ -38,9 +38,11 @@ ErrorCode checkPasswordRules(std::string p) {
     int min = 2;
     int randNum = rand() % (max - min + 1) + min;
 
-    ErrorCode forRandomPurpose[] = {ErrorCode::Ok, ErrorCode::PasswordNeedsAtLeastNineCharacters, 
-            ErrorCode::PasswordNeedsAtLeastOneNumber,ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter, 
-            ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter};
+    ErrorCode forRandomPurpose[] = {
+        ErrorCode::Ok, ErrorCode::PasswordNeedsAtLeastNineCharacters,
+        ErrorCode::PasswordNeedsAtLeastOneNumber,
+        ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter,
+        ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter};
     ErrorCode randomError = forRandomPurpose[randNum];
     return randomError;
 }
